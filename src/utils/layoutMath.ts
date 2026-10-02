@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import type { ArrangementMode, SceneControls } from '../types/frame';
+import type { SceneControls } from '../types/frame';
 
 export interface FrameTransform {
   position: THREE.Vector3;

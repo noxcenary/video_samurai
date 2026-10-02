@@ -3,7 +3,7 @@ import type { ExtractedFrame, ExtractionSettings, VideoMetadata } from '../types
 
 export class VideoFrameExtractor {
   private videoEl: HTMLVideoElement | null = null;
-  private canvasEl: HTMLCanvasElement | null = null;
+
   private detectedFps: number = 30;
 
   /**
@@ -29,9 +29,6 @@ export class VideoFrameExtractor {
         const aspectRatio = width / height;
 
         // Try to detect FPS from the video track; fall back to 30
-        const tracks = (video as any).mozDecodedFrames
-          ? 30
-          : 30; // We'll refine via seeked-frame counting below
         const fps = 30; // browser APIs don't expose FPS reliably; default 30
 
         this.videoEl = video;
